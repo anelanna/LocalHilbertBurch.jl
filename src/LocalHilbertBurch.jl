@@ -1,5 +1,6 @@
 module LocalHilbertBurch
 
+using Oscar
 # Write your package code here.
 
 function hilbert_burch_matrix(d::Vector{Int64}, x, y)
@@ -24,16 +25,9 @@ function U_matrix(m::Vector{Int64})
     return U
 end
 
-function U_matrix(m::Vector{Int64})
+function m_to_d(m::Vector{Int64})
     m[1] == 0 || prepend!(m,0)
-    t = length(m)-1
-    U = zero_matrix(ZZ, t+1, t)
-    for i in 1:t+1
-        for j in 1:t
-            U[i,j] = m[j+1]-m[i]+i-j
-        end
-    end
-    return U
+    [m[i+1] - m[i] for i in 1:(length(m)-1)]
 end
 
 function order_bounds(m::Vector{Int64})
@@ -147,7 +141,6 @@ function sorted_celllist(n::Int64)
 end
 
 
-export hilbert_burch_matrix
-export Cell
+export hilbert_burch_matrix, U_matrix, order_bounds, m_to_d, degree_bounds, hilbert_function_ad_vector, Cell, sorted_celllist, dim
 
 end
