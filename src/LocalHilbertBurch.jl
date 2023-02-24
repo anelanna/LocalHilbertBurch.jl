@@ -83,12 +83,12 @@ end
 struct Cell
     m::Vector{Int64}
     d::Vector{Int64}
-    hilb
-    H
-    E
-    U
-    N
-    M
+    hilb::Vector{fmpq}
+    H::MatElem
+    E::Ideal
+    U::fmpz_mat
+    N::MatElem
+    M::MatElem
     dim::Int64
     I
 end
