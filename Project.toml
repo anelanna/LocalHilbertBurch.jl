@@ -1,6 +1,6 @@
 name = "LocalHilbertBurch"
 uuid = "9e134104-6c8f-43ea-a53e-fc3fda40cbb2"
-authors = ["Anna-Lena Winz <annalena.winz@googlemail.com> and contributors"]
+authors = ["Anna-Lena Winz <annalena.winz@googlemail.com>", "Roser Homs Pons <rhoms@crm.cat>"]
 version = "0.1.0"
 
 [deps]
