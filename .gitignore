@@ -1,2 +1,4 @@
 /Manifest.toml
 notebooks/.ipynb_checkpoints/*
+docs/build
+docs/site
