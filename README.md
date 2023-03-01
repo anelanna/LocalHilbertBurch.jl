@@ -1,6 +1,6 @@
 # LocalHilbertBurch
 
-[![][ga-img]][ga-url] [![][codecov_img]][codecov_url]
+[![][ga-img]][ga-url]
 
 ## What is this about?
 
