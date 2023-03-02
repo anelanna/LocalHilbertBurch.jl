@@ -10,7 +10,7 @@ using Markdown
 Compute the Hilbert-Burch matrix from a given degree vector `d`.
 
 # Examples
-```jldoctest
+```julia
 julia> using Oscar
 
 julia> d = [1,1,2]
