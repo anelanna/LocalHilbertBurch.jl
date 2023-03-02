@@ -3,6 +3,31 @@ module LocalHilbertBurch
 using Oscar
 # Write your package code here.
 
+@doc Markdown.doc"""
+    hilbert_burch_matrix(d::Vector{Int64}, x, y)
+
+Compute the Hilbert-Burch matrix from a given degree vector `d`.
+
+# Examples
+```jldoctest
+julia> using Oscar
+
+julia> d = [1,1,2]
+3-element Vector{Int64}:
+ 1
+ 1
+ 2
+
+julia> R,(x,y) = polynomial_ring(QQ,2)
+(Multivariate Polynomial Ring in x1, x2 over Rational Field, QQMPolyRingElem[x1, x2])
+
+julia> hilbert_burch_matrix(d, x, y)
+[ x2     0      0]
+[-x1    x2      0]
+[  0   -x1   x2^2]
+[  0     0    -x1]
+```
+"""
 function hilbert_burch_matrix(d::Vector{Int64}, x, y)
     t = length(d)
     H = zero_matrix(parent(x), t+1, t)
