@@ -1,6 +1,7 @@
 module LocalHilbertBurch
 
 using Oscar
+using Markdown
 # Write your package code here.
 
 @doc Markdown.doc"""
