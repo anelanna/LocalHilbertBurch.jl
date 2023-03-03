@@ -1,6 +1,8 @@
 using Documenter
 using LocalHilbertBurch
 
+DocMeta.setdocmeta!(LocalHilbertBurch, :DocTestSetup, :(using LocalHilbertBurch, Oscar); recursive=true)
+
 makedocs(
     sitename = "LocalHilbertBurch",
     format = Documenter.HTML(),

@@ -10,7 +10,7 @@ using Markdown
 Compute the Hilbert-Burch matrix from a given degree vector `d`.
 
 # Examples
-```julia
+```jldoctest
 julia> using Oscar
 
 julia> d = [1,1,2]
@@ -19,8 +19,8 @@ julia> d = [1,1,2]
  1
  2
 
-julia> R,(x,y) = polynomial_ring(QQ,2)
-(Multivariate Polynomial Ring in x1, x2 over Rational Field, QQMPolyRingElem[x1, x2])
+julia> R,(x,y) = PolynomialRing(QQ,2)
+(Multivariate Polynomial Ring in x1, x2 over Rational Field, Nemo.fmpq_mpoly[x1, x2])
 
 julia> hilbert_burch_matrix(d, x, y)
 [ x2     0      0]

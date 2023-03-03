@@ -1,3 +1,7 @@
+```@meta
+CurrentModule = LocalHilbertBurch
+```
+
 # LocalHilbertBurch.jl
 
 Documentation for LocalHilbertBurch.jl
