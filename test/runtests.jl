@@ -22,6 +22,18 @@ using Test
         R1,(x,y,c...) = PolynomialRing(QQ, [["x","y"];["c["*string(i)*"]" for i in 1:23]])
         Q,(xg,yg) = GradedPolynomialRing(QQ, ["xg", "yg"])
         C1 = Cell([1,5,8,10],R1,Q)
+
+        # Conformance tests
+        @test C1.hilb isa Vector{fmpq}
+        @test C1.U isa MatElem
+        @test C1.H isa MatElem
+        @test C1.M isa MatElem
+
+        # Correct rings
+        @test base_ring(C1.U) == ZZ
+        @test base_ring(C1.H) == Q
+        @test base_ring(C1.M) == R1
+        
         @test C1.hilb == [1,2,3,4,3,3,3,2,2,1]
         @test C1.U == matrix(ZZ, [1 4 6 7; 1 4 6 7; -2 1 3 4; -4 -1 1 2; -5 -2 0 1])
         @test C1.H == matrix(Q,[yg 0 0 0; -xg yg^4 0 0; 0 -xg yg^3 0; 0 0 -xg yg^2; 0 0 0 -xg])
