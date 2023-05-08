@@ -1,5 +1,7 @@
 module LocalHilbertBurch
 
+abstract type CellType end
+
 using Oscar
 using Markdown
 # Write your package code here.
@@ -91,6 +93,7 @@ function ypolywithcoeffs(k::fmpz, l::fmpz, ccount::Int64, v)
     end
     return result,ccount
 end
+ypolywithcoeffs(k::Int, l::fmpz, ccount::Int64, v) = ypolywithcoeffs(ZZ(k), l, ccount, v)
 
 function ypolywithcoeffs_matrix(m::Vector{Int64}, v)
     m[1] == 0 || prepend!(m,0)
@@ -106,7 +109,7 @@ function ypolywithcoeffs_matrix(m::Vector{Int64}, v)
     return result, ccount
 end
 
-struct Cell
+struct Cell <: CellType
     m::Vector{Int64}
     d::Vector{Int64}
     hilb::Vector{fmpq}
@@ -148,14 +151,14 @@ function Cell(m::Vector{Int64}, R, Q)
     return Cell(m, d, hilb, HQ, E, U, N, M, dim, I)
 end
 
-function dim(c::Cell)
+function dim(c::CellType)
     return c.dim
 end
 
 function sorted_celllist(n::Int64)
-    result = Dict{Int64, Vector{Cell}}()
+    result = Dict{Int64, Vector{CellType}}()
     for i in 0:n-1
-        result[i] = Vector{Cell}()
+        result[i] = Vector{CellType}()
     end
     R,_ = PolynomialRing(QQ, [["x","y"];["c_"*string(i) for i in 1:n]])
     Q,_ = GradedPolynomialRing(QQ, ["x", "y"])
@@ -168,5 +171,6 @@ end
 
 
 export hilbert_burch_matrix, U_matrix, order_bounds, m_to_d, degree_bounds, hilbert_function_ad_vector, Cell, sorted_celllist, dim
+include("GradedHilbertBurch.jl")
 
 end
