@@ -48,6 +48,7 @@ struct GradedCell <: CellType
     H::MatElem
     E::Ideal
     W::fmpq_mat
+    rW::fmpz_mat
     N::MatElem
     M::MatElem
     dim::Int64
@@ -61,11 +62,12 @@ function GradedCell(m::Vector{Int64}, a, b, R, Q)
     HR = hbm_wrap(d, R)
     E = ideal(minors(HQ,ncols(HQ)))
     W = W_matrix(copy(m),a,b)
+    rW = W_degree_bounds(copy(m),a,b)
     N, dim = graded_ypolywithcoeffs_matrix(copy(m),a,b, gens(R))
     M = HR+N
     I = ideal(minors(M,ncols(M)))
     hilb = hilbert_function_as_vector(sum(m), Q, E)
-    return GradedCell(a, b, m, d, hilb, HQ, E, W, N, M, dim, I)
+    return GradedCell(a, b, m, d, hilb, HQ, E, W, rW, N, M, dim, I)
 end
 
 function graded_sorted_celllist(n::Int64,a::Int,b::Int)
