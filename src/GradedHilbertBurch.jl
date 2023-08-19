@@ -75,7 +75,7 @@ function graded_sorted_celllist(n::Int64,a::Int,b::Int)
     for i in 0:2n
         result[i] = Vector{CellType}()
     end
-    R,_ = PolynomialRing(QQ, [["x","y"];["c_"*string(i) for i in 1:2n]])
+    R,_ = PolynomialRing(QQ, [["x","y"];["c_{"*string(i)*"}" for i in 1:2n]])
     Q,_ = GradedPolynomialRing(QQ, ["x", "y"])
     for partition in Generic.partitions(n)
         c = GradedCell(reverse(partition), a, b, R, Q)
