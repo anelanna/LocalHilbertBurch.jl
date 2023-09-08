@@ -1,0 +1,252 @@
+proc m_to_d(m){
+   int t = size(m);
+   intvec d=m[1];
+   for (int i=2;i<=t;i++){
+      d[i]=m[i]-m[i-1];
+      if (d[i]<0){
+         print("The vector m does not have the right form. 
+         The entries should be ascending");
+      }
+   }
+   return(d);
+}
+
+proc hilbert_burch_matrix(d){
+   int t = size(d);
+   matrix A[t+1][t];
+   for (int i=1;i<=t;i++){
+      A[i,i] = y^d[i];
+      A[i+1,i] = -x;
+   }
+   return(A);
+}
+
+proc U_matrix(intvec m){
+   int i,j;
+   int t = size(m);
+   intmat U[t+1][t];
+   for (i=1;i<=t+1;i++){
+      for(j=1;j<=t;j++){
+         if (i!=1){
+            U[i,j] = m[j]-m[i-1]+(i-j);
+            }
+         else{
+            U[1,j] = m[j] + (1-j);
+         }
+      }
+   }
+   return(U);
+}
+
+proc canonical_N(intvec m){
+   intvec d = m_to_d(m);
+   int k,i,j,l,u;
+   list tem;
+   int t = size(m);
+   matrix result[t+1][t];
+   intmat U = U_matrix(m);
+   for (i=1;i<=t+1;i++){
+      for(j=1;j<=t;j++){
+         if (i<=j){
+            l = U[i,j]+1;
+            u = d[i]-1;
+         }
+         if (i>j){
+            l = U[i,j];
+            u = d[j]-1;
+         }
+         tem = ypolyinbounds(l,u,k);
+         result[i,j]=tem[1];
+         k=tem[2];
+      }
+   }
+   return(result);
+}
+
+proc canonical_HB(intvec m){
+   return(hilbert_burch_matrix(m_to_d(m))+canonical_N(m));
+}
+
+proc ypolyinbounds(int l, int u,int k){
+   poly result;
+   l = max(l,0);
+   for (int i=l;i<=u;i++){
+      k = k+1;
+      result = result + c(k)*y^i;
+   }
+   return(list(result,k));
+}
+
+proc dimcell(m){
+   intvec d = m_to_d(m);
+   int k,i,j,l,u;
+   list tem;
+   int t = size(m);
+   intmat U = U_matrix(m);
+   for (i=1;i<=t+1;i++){
+      for(j=1;j<=t;j++){
+         if (i<=j){
+            l = max(U[i,j]+1,0);
+            u = d[i]-1;
+         }
+         if (i>j){
+            l = max(U[i,j],0);
+            u = d[j]-1;
+         }
+         k = k + max(u-l+1,0);
+      }
+   }
+   return(k);
+}
+
+proc homogeneousN(intvec m){
+   intvec d = m_to_d(m);
+   int k,i,j,l,u;
+   k=1;
+   list tem;
+   int t = size(m);
+   matrix result[t+1][t];
+   intmat U = U_matrix(m);
+   for (j=1;j<=t;j++){
+      for(i=j+1;i<=t+1;i++){
+         l = U[i,j];
+         u = d[j]-1;
+         if (l<=u && 0<=l){
+            result[i,j]=c(k)*y^l;
+            k=k+1;
+         }
+      }
+   }
+   return(result);
+}
+
+proc homogeneousCHB(intvec m){
+   intvec d = m_to_d(m);
+   return(homogeneousN(m)+hilbert_burch_matrix(d));
+}
+
+proc dimhomogeneouscell(intvec m){
+   intvec d = m_to_d(m);
+   int k,i,j,l,u;
+   k=0;
+   int t = size(m);
+   intmat U = U_matrix(m);
+   for (j=1;j<=t;j++){
+      for(i=j+1;i<=t+1;i++){
+         l = U[i,j];
+         u = d[j]-1;
+         if (l<=u && 0<=l){
+            k=k+1;
+         }
+      }
+   }
+   return(k);
+}
+
+proc Hilbertfunction(intvec m){
+   return(hilb(std(minor(hilbert_burch_matrix(m_to_d(m)),size(m))),2));
+}
+
+proc dimensionsvector(int n){
+   list ms = get_all_ms(n);
+   list result;
+   int d;
+   for (int i =1;i<=size(ms);i++){
+      d = dimcell(ms[i]);
+      if(typeof(result[d+1])=="none"){
+         result[d+1] = 1;
+      }
+      else{
+         result[d+1] = result[d+1]+1;
+      }
+   }
+   return(result);
+}
+
+proc createdimensiondifferencelist(int n){
+   list result;
+   list ms = get_all_ms(n);
+   int d,dh;
+   intvec h;
+   for (int i =1;i<=size(ms);i++){
+      d = dimcell(ms[i]);
+      dh = dimhomogeneouscell(ms[i]);
+      h = Hilbertfunction(ms[i]);
+      result[i] = list(h,d,dh,d-dh);
+   }
+   return(result);
+}
+
+proc check_dimdiffs(int n, list #){
+   list dd = createdimensiondifferencelist(n);
+   list result, checked;
+   intvec hf,hftemp;
+   int i,j,ddi;
+   for (i = 1; i<=size(dd); i++){
+      hf = dd[i][1];
+      ddi = dd[i][4];
+      if (!is_in_list(checked,hf)){
+         for (j = i+1; j<=size(dd);j++){
+            hftemp = dd[j][1];
+            if (hf == hftemp && ddi!=dd[j][4]){
+               return(0);
+            }
+         }
+         checked = checked + list(hf);
+         if (size(#)>0){
+            result = result + list(list(hf, ddi));
+         }
+      }
+   }
+   if(size(#)>0){
+      return(result);
+   }
+   return(1);
+}
+
+proc is_in_list(list l, hf){
+   for (int i=1;i<=size(l);i++){
+      if(l[i]==hf){
+         print("is in list");
+         return(1);
+      }
+   }
+   print("not in list");
+   return(0);
+}
+
+proc check_all_dimdiffs(int l, int u){
+   for (int n =l; n<=u; n++){
+      if(check_dimdiffs(n)){
+         print("Difference of dimensions ok for n= "+string(n));
+      }
+      else{
+         print("Difference of dimensions NOT ok for n= "+string(n));
+      }
+   }
+}
+
+proc check_all_dimdiffs_detailed(int l, int u){
+   list result;
+   for (int n =l; n<=u; n++){
+      result[n] = check_dimdiffs(n,list(1));
+   }
+   return(result);
+}
+
+proc dimensionslist(int n){
+   list result;
+   for (int i=1;i<=n;i++){
+      result[i] = dimensionsvector(i); 
+   }
+   return(result);
+}
+
+
+proc concatinationoflists(list l){
+   list result;
+   for (int i =1;i<=size(l);i++){
+      result = result + l[i];
+   }
+   return(result);
+}

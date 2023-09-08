@@ -1,0 +1,67 @@
+proc get_all_partitions(n){
+   list result;
+   if (n==1){
+      result[1] = list(1);
+      return(result);
+   }
+   list previous = get_all_partitions(n-1);
+   int k,j;
+   int i = 2;
+   result[1] = list(n);
+   for (j=1; j<= size(previous); j++) {
+      k = size(previous[j]);
+      if (k>1){
+         if(previous[j][1] < previous[j][2]){
+            result[i] = previous[j];
+            result[i][1]=result[i][1]+1;
+            i++;
+            }
+      }
+      result[i] = insert(previous[j],1);
+      i++;
+   }
+   return(result);
+}
+
+proc make_partitions_of_partitionlist(list previous){
+   list result;
+   int k,j;
+   int i = 1;
+   for (j=1; j<= size(previous); j++) {
+      k = size(previous[j]);
+      if (k==1){
+         result[i] = previous[j];
+         result[i][1] = result[i][1]+1;
+         i++;
+      }
+      if (k>1){
+         if(previous[j][1] < previous[j][2]){
+            result[i] = previous[j];
+            result[i][1]=result[i][1]+1;
+            i++;
+            }
+      }
+      result[i] = insert(previous[j],1);
+      i++;
+   }
+   return(result);
+}
+
+proc partition_to_m(p){
+// mache aus einer Partition einen m-Vektor
+   intvec m;
+   for (int i = 1; i<= size(p); i++){
+      m[i] = p[i];
+
+   }
+   return(m);
+}
+
+proc get_all_ms(int n){
+   list result;
+   list partitions = get_all_partitions(n);
+   for (int i=1;i<=size(partitions);i++){
+      result[i] = partition_to_m(partitions[i]);
+   }  
+   return(result);
+}

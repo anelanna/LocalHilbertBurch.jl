@@ -1,0 +1,1078 @@
+[1]:
+   1
+[2]:
+   1
+[3]:
+   1
+m: 1
+Obtained degree bounds in 
+1
+steps.
+1
+[1]:
+   1
+[2]:
+   1
+[3]:
+   7
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 1
+Obtained degree bounds in 
+0
+steps.
+1
+[1]:
+   2
+[2]:
+   1
+[3]:
+   1
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 2
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,1
+Obtained degree bounds in 
+5
+steps.
+1
+[1]:
+   2
+[2]:
+   1
+[3]:
+   3
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 2
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,1
+Obtained degree bounds in 
+1
+steps.
+1
+[1]:
+   3
+[2]:
+   3
+[3]:
+   2
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 3
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,2
+Obtained degree bounds in 
+4
+steps.
+1
+m: 1,1,1
+Obtained degree bounds in 
+14
+steps.
+1
+[1]:
+   3
+[2]:
+   1
+[3]:
+   1
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 3
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,2
+Obtained degree bounds in 
+4
+steps.
+1
+m: 1,1,1
+Obtained degree bounds in 
+14
+steps.
+1
+[1]:
+   3
+[2]:
+   1
+[3]:
+   4
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 3
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,2
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,1
+Obtained degree bounds in 
+4
+steps.
+1
+[1]:
+   4
+[2]:
+   3
+[3]:
+   2
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 4
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,3
+Obtained degree bounds in 
+3
+steps.
+1
+m: 2,2
+Obtained degree bounds in 
+4
+steps.
+1
+m: 1,1,2
+Obtained degree bounds in 
+16
+steps.
+1
+m: 1,1,1,1
+Obtained degree bounds in 
+33
+steps.
+1
+[1]:
+   4
+[2]:
+   1
+[3]:
+   1
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 4
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,3
+Obtained degree bounds in 
+2
+steps.
+1
+m: 2,2
+Obtained degree bounds in 
+4
+steps.
+1
+m: 1,1,2
+Obtained degree bounds in 
+16
+steps.
+1
+m: 1,1,1,1
+Obtained degree bounds in 
+33
+steps.
+1
+[1]:
+   4
+[2]:
+   2
+[3]:
+   3
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 4
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,3
+Obtained degree bounds in 
+1
+steps.
+1
+m: 2,2
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,2
+Obtained degree bounds in 
+7
+steps.
+1
+m: 1,1,1,1
+Obtained degree bounds in 
+39
+steps.
+1
+[1]:
+   4
+[2]:
+   1
+[3]:
+   5
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 4
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,3
+Obtained degree bounds in 
+1
+steps.
+1
+m: 2,2
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,2
+Obtained degree bounds in 
+3
+steps.
+1
+m: 1,1,1,1
+Obtained degree bounds in 
+11
+steps.
+1
+[1]:
+   5
+[2]:
+   3
+[3]:
+   2
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 5
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,4
+Obtained degree bounds in 
+2
+steps.
+1
+m: 2,3
+Obtained degree bounds in 
+2
+steps.
+1
+m: 1,1,3
+Obtained degree bounds in 
+10
+steps.
+1
+m: 1,2,2
+Obtained degree bounds in 
+20
+steps.
+1
+m: 1,1,1,2
+Obtained degree bounds in 
+42
+steps.
+1
+m: 1,1,1,1,1
+Obtained degree bounds in 
+69
+steps.
+1
+[1]:
+   5
+[2]:
+   1
+[3]:
+   1
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 5
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,4
+Obtained degree bounds in 
+2
+steps.
+1
+m: 2,3
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,3
+Obtained degree bounds in 
+12
+steps.
+1
+m: 1,2,2
+Obtained degree bounds in 
+15
+steps.
+1
+m: 1,1,1,2
+Obtained degree bounds in 
+42
+steps.
+1
+m: 1,1,1,1,1
+Obtained degree bounds in 
+69
+steps.
+1
+[1]:
+   5
+[2]:
+   2
+[3]:
+   3
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 5
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,4
+Obtained degree bounds in 
+1
+steps.
+1
+m: 2,3
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,3
+Obtained degree bounds in 
+6
+steps.
+1
+m: 1,2,2
+Obtained degree bounds in 
+4
+steps.
+1
+m: 1,1,1,2
+Obtained degree bounds in 
+32
+steps.
+1
+m: 1,1,1,1,1
+Obtained degree bounds in 
+112
+steps.
+1
+[1]:
+   5
+[2]:
+   1
+[3]:
+   6
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 5
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,4
+Obtained degree bounds in 
+1
+steps.
+1
+m: 2,3
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,3
+Obtained degree bounds in 
+5
+steps.
+1
+m: 1,2,2
+Obtained degree bounds in 
+3
+steps.
+1
+m: 1,1,1,2
+Obtained degree bounds in 
+7
+steps.
+1
+m: 1,1,1,1,1
+Obtained degree bounds in 
+25
+steps.
+1
+[1]:
+   6
+[2]:
+   3
+[3]:
+   2
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 6
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,5
+Obtained degree bounds in 
+2
+steps.
+1
+m: 2,4
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,4
+Obtained degree bounds in 
+12
+steps.
+1
+m: 3,3
+Obtained degree bounds in 
+2
+steps.
+1
+m: 1,2,3
+Obtained degree bounds in 
+17
+steps.
+1
+m: 1,1,1,3
+Obtained degree bounds in 
+27
+steps.
+1
+m: 2,2,2
+Obtained degree bounds in 
+24
+steps.
+1
+m: 1,1,2,2
+Obtained degree bounds in 
+43
+steps.
+1
+m: 1,1,1,1,2
+Obtained degree bounds in 
+93
+steps.
+1
+m: 1,1,1,1,1,1
+Obtained degree bounds in 
+137
+steps.
+1
+[1]:
+   6
+[2]:
+   1
+[3]:
+   1
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 6
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,5
+Obtained degree bounds in 
+2
+steps.
+1
+m: 2,4
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,4
+Obtained degree bounds in 
+8
+steps.
+1
+m: 3,3
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,2,3
+Obtained degree bounds in 
+11
+steps.
+1
+m: 1,1,1,3
+Obtained degree bounds in 
+26
+steps.
+1
+m: 2,2,2
+Obtained degree bounds in 
+18
+steps.
+1
+m: 1,1,2,2
+Obtained degree bounds in 
+43
+steps.
+1
+m: 1,1,1,1,2
+Obtained degree bounds in 
+93
+steps.
+1
+m: 1,1,1,1,1,1
+Obtained degree bounds in 
+137
+steps.
+1
+[1]:
+   6
+[2]:
+   2
+[3]:
+   3
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 6
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,5
+Obtained degree bounds in 
+1
+steps.
+1
+m: 2,4
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,4
+Obtained degree bounds in 
+8
+steps.
+1
+m: 3,3
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,2,3
+Obtained degree bounds in 
+3
+steps.
+1
+m: 1,1,1,3
+Obtained degree bounds in 
+21
+steps.
+1
+m: 2,2,2
+Obtained degree bounds in 
+5
+steps.
+1
+m: 1,1,2,2
+Obtained degree bounds in 
+24
+steps.
+1
+m: 1,1,1,1,2
+Obtained degree bounds in 
+100
+steps.
+1
+m: 1,1,1,1,1,1
+Obtained degree bounds in 
+303
+steps.
+1
+[1]:
+   6
+[2]:
+   1
+[3]:
+   7
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 6
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,5
+Obtained degree bounds in 
+1
+steps.
+1
+m: 2,4
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,4
+Obtained degree bounds in 
+7
+steps.
+1
+m: 3,3
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,2,3
+Obtained degree bounds in 
+3
+steps.
+1
+m: 1,1,1,3
+Obtained degree bounds in 
+12
+steps.
+1
+m: 2,2,2
+Obtained degree bounds in 
+4
+steps.
+1
+m: 1,1,2,2
+Obtained degree bounds in 
+6
+steps.
+1
+m: 1,1,1,1,2
+Obtained degree bounds in 
+15
+steps.
+1
+m: 1,1,1,1,1,1
+Obtained degree bounds in 
+52
+steps.
+1
+[1]:
+   7
+[2]:
+   3
+[3]:
+   2
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 7
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,6
+Obtained degree bounds in 
+2
+steps.
+1
+m: 2,5
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,5
+Obtained degree bounds in 
+8
+steps.
+1
+m: 3,4
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,2,4
+Obtained degree bounds in 
+11
+steps.
+1
+m: 1,1,1,4
+Obtained degree bounds in 
+26
+steps.
+1
+m: 1,3,3
+Obtained degree bounds in 
+12
+steps.
+1
+m: 2,2,3
+Obtained degree bounds in 
+21
+steps.
+1
+m: 1,1,2,3
+Obtained degree bounds in 
+45
+steps.
+1
+m: 1,1,1,1,3
+Obtained degree bounds in 
+61
+steps.
+1
+m: 1,2,2,2
+Obtained degree bounds in 
+67
+steps.
+1
+m: 1,1,1,2,2
+Obtained degree bounds in 
+109
+steps.
+1
+m: 1,1,1,1,1,2
+Obtained degree bounds in 
+189
+steps.
+1
+m: 1,1,1,1,1,1,1
+Obtained degree bounds in 
+258
+steps.
+1
+[1]:
+   7
+[2]:
+   1
+[3]:
+   1
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 7
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,6
+Obtained degree bounds in 
+2
+steps.
+1
+m: 2,5
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,5
+Obtained degree bounds in 
+8
+steps.
+1
+m: 3,4
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,2,4
+Obtained degree bounds in 
+6
+steps.
+1
+m: 1,1,1,4
+Obtained degree bounds in 
+37
+steps.
+1
+m: 1,3,3
+Obtained degree bounds in 
+10
+steps.
+1
+m: 2,2,3
+Obtained degree bounds in 
+15
+steps.
+1
+m: 1,1,2,3
+Obtained degree bounds in 
+43
+steps.
+1
+m: 1,1,1,1,3
+Obtained degree bounds in 
+61
+steps.
+1
+m: 1,2,2,2
+Obtained degree bounds in 
+47
+steps.
+1
+m: 1,1,1,2,2
+Obtained degree bounds in 
+109
+steps.
+1
+m: 1,1,1,1,1,2
+Obtained degree bounds in 
+189
+steps.
+1
+m: 1,1,1,1,1,1,1
+Obtained degree bounds in 
+258
+steps.
+1
+[1]:
+   7
+[2]:
+   2
+[3]:
+   3
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 7
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,6
+Obtained degree bounds in 
+1
+steps.
+1
+m: 2,5
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,5
+Obtained degree bounds in 
+10
+steps.
+1
+m: 3,4
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,2,4
+Obtained degree bounds in 
+4
+steps.
+1
+m: 1,1,1,4
+Obtained degree bounds in 
+16
+steps.
+1
+m: 1,3,3
+Obtained degree bounds in 
+3
+steps.
+1
+m: 2,2,3
+Obtained degree bounds in 
+3
+steps.
+1
+m: 1,1,2,3
+Obtained degree bounds in 
+14
+steps.
+1
+m: 1,1,1,1,3
+Obtained degree bounds in 
+91
+steps.
+1
+m: 1,2,2,2
+Obtained degree bounds in 
+18
+steps.
+1
+m: 1,1,1,2,2
+Obtained degree bounds in 
+94
+steps.
+1
+m: 1,1,1,1,1,2
+Obtained degree bounds in 
+284
+steps.
+1
+m: 1,1,1,1,1,1,1
+Obtained degree bounds in 
+805
+steps.
+1
+[1]:
+   7
+[2]:
+   1
+[3]:
+   3
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 7
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,6
+Obtained degree bounds in 
+1
+steps.
+1
+m: 2,5
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,5
+Obtained degree bounds in 
+9
+steps.
+1
+m: 3,4
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,2,4
+Obtained degree bounds in 
+4
+steps.
+1
+m: 1,1,1,4
+Obtained degree bounds in 
+20
+steps.
+1
+m: 1,3,3
+Obtained degree bounds in 
+3
+steps.
+1
+m: 2,2,3
+Obtained degree bounds in 
+3
+steps.
+1
+m: 1,1,2,3
+Obtained degree bounds in 
+8
+steps.
+1
+m: 1,1,1,1,3
+Obtained degree bounds in 
+27
+steps.
+1
+m: 1,2,2,2
+Obtained degree bounds in 
+7
+steps.
+1
+m: 1,1,1,2,2
+Obtained degree bounds in 
+23
+steps.
+1
+m: 1,1,1,1,1,2
+Obtained degree bounds in 
+132
+steps.
+1
+m: 1,1,1,1,1,1,1
+Obtained degree bounds in 
+361
+steps.
+1
+[1]:
+   7
+[2]:
+   1
+[3]:
+   8
+// ** redefining r (   ring r = (0,c(1..1000)),(x,y),M(A);)
+m: 7
+Obtained degree bounds in 
+0
+steps.
+1
+m: 1,6
+Obtained degree bounds in 
+1
+steps.
+1
+m: 2,5
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,1,5
+Obtained degree bounds in 
+9
+steps.
+1
+m: 3,4
+Obtained degree bounds in 
+1
+steps.
+1
+m: 1,2,4
+Obtained degree bounds in 
+4
+steps.
+1
+m: 1,1,1,4
+Obtained degree bounds in 
+19
+steps.
+1
+m: 1,3,3
+Obtained degree bounds in 
+3
+steps.
+1
+m: 2,2,3
+Obtained degree bounds in 
+3
+steps.
+1
+m: 1,1,2,3
+Obtained degree bounds in 
+8
+steps.
+1
+m: 1,1,1,1,3
+Obtained degree bounds in 
+24
+steps.
+1
+m: 1,2,2,2
+Obtained degree bounds in 
+7
+steps.
+1
+m: 1,1,1,2,2
+Obtained degree bounds in 
+11
+steps.
+1
+m: 1,1,1,1,1,2
+Obtained degree bounds in 
+30
+steps.
+1
+m: 1,1,1,1,1,1,1
+Obtained degree bounds in 
+101
+steps.
+1
+

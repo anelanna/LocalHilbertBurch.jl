@@ -1,0 +1,207 @@
+LIB "qhmoduli.lib";
+
+proc m_to_d(m){
+   int t = size(m);
+   intvec d=m[1];
+   for (int i=2;i<=t;i++){
+      d[i]=m[i]-m[i-1];
+      if (d[i]<0){
+         print("The vector m does not have the right form. 
+         The entries should be ascending");
+      }
+   }
+   return(d);
+}
+
+proc get_W_matrix(intvec m, list #){
+   int i,j;
+   int t = size(m);
+   if(size(#)==2){
+      number a = #[1];
+      number b = #[2];
+   }
+   else{
+      number a = ringlist(basering)[3][1][2][1];
+      number b = ringlist(basering)[3][1][2][2];
+   }
+   matrix W[t+1][t];
+   for (i=1;i<=t+1;i++){
+      for(j=1;j<=t;j++){
+         if (i!=1){
+            W[i,j] = m[j]-m[i-1]+a/b*(i-j);
+            }
+         else{
+            W[1,j] = m[j] + a/b*(1-j);
+         }
+      }
+   }
+   return(W);
+}
+
+proc round_down(u){
+   int n;
+   if(u>=0){
+      while(n<=u){
+         n++;
+      }
+      return(n-1);
+   }
+   else{
+      while(n>=u){
+         n--;
+      }
+      return(n);
+   }
+}
+
+proc round_up(u){
+	int rdu = round_down(u);
+	if (rdu<u){
+		return(rdu+1);
+	}
+	return(rdu);
+}
+
+proc rW_matrix(intvec m, list #){
+   matrix W = get_W_matrix(m,#);
+   intmat Wr[nrows(W)][ncols(W)];
+   int i,j;
+   for (i=1;i<=nrows(W);i++){
+      for(j=1;j<=ncols(W);j++){
+         if(i<=j){
+            Wr[i,j] = round_up(W[i,j])-1;
+         }
+         else{
+            Wr[i,j] = round_down(W[i,j]);
+         }
+      }
+   }
+   return(Wr);
+}
+
+proc degree_bounds(intvec m){
+   int t = size(m);
+   intmat rW = rW_matrix(m);
+   intmat DB[t+1][t];
+   int k,i,j;
+   intvec d = m_to_d(m);
+   for (i=1; i<=t+1 ;i++){
+      for (j=1; j<=t ; j++){
+         k = Min(list(i,j));
+         DB[i,j] = Max(list(Min(list(d[k]-1,rW[i,j])),-1));
+      }
+   }
+   return(DB);
+}
+
+proc hilbert_burch_matrix(d){
+   int t = size(d);
+   matrix A[t+1][t];
+   for (int i=1;i<=t;i++){
+      A[i,i] = y^d[i];
+      A[i+1,i] = -x;
+   }
+   return(A);
+}
+
+proc reduce_degrees(matrix N, intvec d){
+   int i,j,grad,count;
+   int b = ringlist(basering)[3][1][2][2];
+   list l,red;
+   for (i = 1; i<=nrows(N); i++){
+      for (j = 1; j<=ncols(N);j++){
+         grad = ydeg(N[i,j]);
+         if(grad >= d[Min(list(i,j))]){
+            N = reduction_move(i,j,N,d);
+            count = count+1;
+            i=1;
+            j=1;
+         }
+      }
+   }
+   return(list(N,count));
+}
+
+proc ydeg(poly f){
+   int result;
+   int b = ringlist(basering)[3][1][2][2];
+   if(f ==0){
+      result = -1;
+   }
+   else{
+      result = deg(f) div b;
+   }
+   return(result);
+}
+
+proc reduction_move(int i, int j, matrix N, intvec d){
+   matrix H = hilbert_burch_matrix(d);
+   if(i<j){
+      poly q = N[i,j]/(y^d[i]+N[i,i]);
+      N = N+H;
+      N[1..nrows(N),j] = N[1..nrows(N),j] +(-q)*N[1..nrows(N),i];
+      N[i+1,1..ncols(N)] = N[i+1,1..ncols(N)] + q * N[j+1,1..ncols(N)];
+      N = N-H;
+   }
+   else{
+      poly q = N[i,j]/(y^d[j]+N[j,j]);
+      N = N+H;
+      N[i,1..ncols(N)] = N[i,1..ncols(N)] + (-q) * N[j,1..ncols(N)];
+      if(j>=2){
+          N[1..nrows(N),j-1] = N[1..nrows(N),j-1] + q *N[1..nrows(N),i-1];
+      }
+      N = N-H;
+   }
+   return(N);
+}
+
+
+proc matrix_of_degrees(matrix N){
+   intmat D[nrows(N)][ncols(N)];
+   int i,j;
+   for (i=1;i<=nrows(N);i++){
+      for (j=1;j<=ncols(N);j++){
+         D[i,j] = ydeg(N[i,j]);
+      }
+   }
+   return(D);
+}
+
+proc y_poly(int count, int db){
+   poly result;
+   for (int i=0;i<=db;i++){
+      result = result + c(count+i)*y^i;
+   }
+   return(result);
+}
+
+proc Ngen(intmat DB){
+   int t = ncols(DB);
+   matrix result[t+1][t];
+   int i,j,count;
+	count=1;
+   for (i=1;i<=t+1;i++){
+      for(j=1;j<=t;j++){
+         if(DB[i,j]>-1){
+            result[i,j] = y_poly(count,DB[i,j]);
+            count = count+DB[i,j]+1;
+            }
+      }
+   }
+   return(result);
+}
+
+proc Ngm(intvec m){
+   matrix N = Ngen(rW_matrix(m));
+   return(N);
+}
+
+proc testm(intvec m,list #){
+   intvec d= m_to_d(m);
+   matrix N = Ngen(rW_matrix(m,#));
+   list result = reduce_degrees(N,d);
+   print("Obtained degree bounds in ");
+   print(result[2]);
+   print("steps.");
+   return(result[1]);
+}
